@@ -26,6 +26,14 @@ class Movie < ApplicationRecord
     the_director = matching_directors.at(0)
 
     return the_director
+
+    def characters
+      my_id = self.id
+
+      matching_characters = Characters.where({:movie_id => my_id})
+
+      return matching_characters
+    end
   end
 
   
