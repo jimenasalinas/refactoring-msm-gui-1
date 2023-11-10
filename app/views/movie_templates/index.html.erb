@@ -105,6 +105,15 @@
     </td>
 
     <td>
+<!--    new code using method-->
+    <%# if movie.director.name  != nil %>
+      <%#= movie.director.name %>
+
+        <%# else %>
+<!--        Uh oh! We weren't able to find a director for this movie.-->
+      <%# end %>
+
+<!--old code-->
       <% matching_directors = Director.where({ :id => movie.director_id }) %>
 
       <% the_director = matching_directors.at(0) %>
