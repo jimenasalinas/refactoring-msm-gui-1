@@ -15,5 +15,7 @@ class Actor < ApplicationRecord
     my_id = self.id
 
     all_characters = Character.where({:actor_id => my_id})
+
+    return all_characters
   end
 end
